@@ -30,7 +30,7 @@ class KeyvMongo extends EventEmitter {
 			expireAfterSeconds: 0,
 			background: true
 		});
-		this.mongo = ['update', 'findOne', 'remove'].reduce((obj, method) => {
+		this.mongo = ['update', 'findOne', 'remove', 'find'].reduce((obj, method) => {
 			obj[method] = pify(collection[method].bind(collection));
 			return obj;
 		}, {});
